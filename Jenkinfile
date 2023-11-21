@@ -11,13 +11,13 @@ pipeline {
          stage('docker-compose stop') {
              
             steps {
-              sh 'docker-compose down'
+              sh 'docker-compose up -d'
             }
         }
         stages ('start up') {
             
             steps {
-                sh 'docker-compose up -d'
+                sh 'docker-compose down'
             }
         }
 
